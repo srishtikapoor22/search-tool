@@ -10,22 +10,22 @@ def extract(file_path):
     for i in range(1, len(reader.pages)):
         page_text=reader.pages[i].extract_text()
         if page_text:
-            text+=page_text
+            text += " ".join(page_text.split()) + "\n\n"
     return text    
 
 #text chunking
 def chunking(raw_text):
-    paragraph=raw_text.split("\n\n")
+    paragraph=raw_text.split("\n")
     chunks=[]
-    skip_keywords = ["abstract", "equal contribution", "introduction", "conclusions"]
     for para in paragraph:
         #remove whitespaces
         para=para.strip()
-        if len(para)<150:
+
+        if "abstract" in para.lower()[:100]: # Only check the start of the paragraph
             continue
-        if any(word in para.lower() for word in skip_keywords):
-            continue
-        chunks.append(para)
+
+        if len(para)>150:
+            chunks.append(para)
     return chunks
 
 #search
@@ -50,8 +50,8 @@ def pdf_search(chunks,query,threshhold=0.1):
         print("No relevant results found. Try lowering the threshold.")
             
     else:
-        print(f"\nFound {len(results)} matches. Showing Top 3:\n")
-    for i, match in enumerate(results[:3]):
+        print(f"\nFound {len(results)} matches. Showing Top 5:\n")
+    for i, match in enumerate(results[:5]):
         print(f"RANK {i+1} | CONFIDENCE: {round(match['score'], 4)}")
         print(f"CONTENT: {match['text'][:600]}...") # Limit text length for readability
         print("-" * 50)

@@ -1,0 +1,42 @@
+Enter the path of the PDF file: data/attention.pdf
+Enter your search query: The definition of Scaled Dot-Product Attention using queries, keys, and values
+Loading model
+Loading weights: 100%|████████████████████████████| 515/515 [00:00<00:00, 5317.78it/s]
+
+Found 10 matches. Showing Top 3:
+
+RANK 1 | CONFIDENCE: 0.9788
+CONTENT: Figure 1: The Transformer - model architecture. wise fully connected feed-forward network. We employ a residual connection [10] around each of the two sub-layers, followed by layer normalization [ 1]. That is, the output of each sub-layer is LayerNorm(x + Sublayer(x)), where Sublayer(x) is the function implemented by the sub-layer itself. To facilitate these residual connections, all sub-layers in the model, as well as the embedding layers, produce outputs of dimensiondmodel = 512. Decoder: The decoder is also composed of a stack ofN = 6 identical layers. In addition to the two sub-layers in e...
+--------------------------------------------------
+RANK 2 | CONFIDENCE: 0.7631
+CONTENT: Recurrent models typically factor computation along the symbol positions of the input and output sequences. Aligning the positions to steps in computation time, they generate a sequence of hidden statesht, as a function of the previous hidden stateht−1 and the input for positiont. This inherently sequential nature precludes parallelization within training examples, which becomes critical at longer sequence lengths, as memory constraints limit batching across examples. Recent work has achieved signiﬁcant improvements in computational efﬁciency through factorization tricks [18] and conditional c...
+--------------------------------------------------
+RANK 3 | CONFIDENCE: 0.4713
+CONTENT: Table 1: Maximum path lengths, per-layer complexity and minimum number of sequential operations for different layer types.n is the sequence length,d is the representation dimension,k is the kernel size of convolutions andr the size of the neighborhood in restricted self-attention. Layer Type Complexity per Layer Sequential Maximum Path Length Operations Self-Attention O(n2·d) O(1) O(1) Recurrent O(n·d2) O(n) O(n) Convolutional O(k·n·d2) O(1) O(logk(n)) Self-Attention (restricted) O(r·n·d) O(1) O(n/r) bottoms of the encoder and decoder stacks. The positional encodings have the same dimensiondmo...
+--------------------------------------------------
+(venv) PS C:\Users\Srishti\pdf-search\search-tool> python -m src.search
+Enter the path of the PDF file: data/attention.pdf
+Enter your search query: The formula for Attention(Q, K, V) using softmax and the square root of dk
+Loading model
+Loading weights: 100%|████████████████████████████| 515/515 [00:00<00:00, 6683.37it/s]
+
+Found 8 matches. Showing Top 5:
+
+RANK 1 | CONFIDENCE: 0.8118
+CONTENT: Scaled Dot-Product Attention Multi-Head Attention Figure 2: (left) Scaled Dot-Product Attention. (right) Multi-Head Attention consists of several attention layers running in parallel. query with all keys, divide each by√dk, and apply a softmax function to obtain the weights on the values. In practice, we compute the attention function on a set of queries simultaneously, packed together into a matrixQ. The keys and values are also packed together into matricesK andV . We compute the matrix of outputs as: Attention(Q,K,V ) = softmax(QK T √dk )V (1) The two most commonly used attention functions ...
+--------------------------------------------------
+RANK 2 | CONFIDENCE: 0.6505
+CONTENT: Table 1: Maximum path lengths, per-layer complexity and minimum number of sequential operations for different layer types.n is the sequence length,d is the representation dimension,k is the kernel size of convolutions andr the size of the neighborhood in restricted self-attention. Layer Type Complexity per Layer Sequential Maximum Path Length Operations Self-Attention O(n2·d) O(1) O(1) Recurrent O(n·d2) O(n) O(n) Convolutional O(k·n·d2) O(1) O(logk(n)) Self-Attention (restricted) O(r·n·d) O(1) O(n/r) bottoms of the encoder and decoder stacks. The positional encodings have the same dimensiondmo...
+--------------------------------------------------
+RANK 3 | CONFIDENCE: 0.6085
+CONTENT: Recurrent models typically factor computation along the symbol positions of the input and output sequences. Aligning the positions to steps in computation time, they generate a sequence of hidden statesht, as a function of the previous hidden stateht−1 and the input for positiont. This inherently sequential nature precludes parallelization within training examples, which becomes critical at longer sequence lengths, as memory constraints limit batching across examples. Recent work has achieved signiﬁcant improvements in computational efﬁciency through factorization tricks [18] and conditional c...
+--------------------------------------------------
+RANK 4 | CONFIDENCE: 0.4324
+CONTENT: Table 2: The Transformer achieves better BLEU scores than previous state-of-the-art models on the English-to-German and English-to-French newstest2014 tests at a fraction of the training cost. Model BLEU Training Cost (FLOPs) EN-DE EN-FR EN-DE EN-FR ByteNet [15] 23.75 Deep-Att + PosUnk [32] 39.2 1.0· 1020 GNMT + RL [31] 24.6 39.92 2.3· 1019 1.4· 1020 ConvS2S [8] 25.16 40.46 9.6· 1018 1.5· 1020 MoE [26] 26.03 40.56 2.0· 1019 1.2· 1020 Deep-Att + PosUnk Ensemble [32] 40.4 8.0· 1020 GNMT + RL Ensemble [31] 26.30 41.16 1.8· 1020 1.1· 1021 ConvS2S Ensemble [8] 26.36 41.29 7.7· 1019 1.2· 1021 TransfRANK 4 | CONFIDENCE: 0.4324
+CONTENT: Table 2: The Transformer achieves better BLEU scores than previous state-of-the-art models on the English-to-German and English-to-French newstest2014 tests at a fraction of the training cost. Model BLEU Training Cost (FLOPs) EN-DE EN-FR EN-DE EN-FR ByteNet [15] 23.75 Deep-Att + PosUnk [32] 39.2 1.0· 1020 GNMT + RL [31] 24.6 39.92 2.3· 1019 1.4· 1020 ConvS2S [8] 25.16 40.46 9.6· 1018 1.5· 1020 MoE [26] 26.03 40.56 2.0· 1019 1.2· 1020 Deep-Att + PosUnk Ensemble [32] 40.4 8.0· 1020 GNMT + RL Ensemble [31] 26.30 41.16 1.8· 1020 1.1· 1021 ConvS2S Ensemble [8] 26.36 41.29 7.7· 1019 1.2· 1021 Transfe-art models on the English-to-German and English-to-French newstest2014 tests at a fraction of the training cost. Model BLEU Training Cost (FLOPs) EN-DE EN-FR EN-DE EN-FR ByteNet [15] 23.75 Deep-Att + PosUnk [32] 39.2 1.0· 1020 GNMT + RL [31] 24.6 39.92 2.3· 1019 1.4· 1020 ConvS2S [8] 25.16 40.46 9.6· 1018 1.5· 1020 MoE [26] 26.03 40.56 2.0· 1019 1.2· 1020 Deep-Att + PosUnk Ensemble [32] 40.4 8.0· 1020 GNMT + RL Ensemble [31] 26.30 41.16 1.8· 1020 1.1· 1021 ConvS2S Ensemble [8] 26.36 41.29 7.7· 1019 1.2· 1021 Transfction of the training cost. Model BLEU Training Cost (FLOPs) EN-DE EN-FR EN-DE EN-FR ByteNet [15] 23.75 Deep-Att + PosUnk [32] 39.2 1.0· 1020 GNMT + RL [31] 24.6 39.92 2.3· 1019 1.4· 1020 ConvS2S [8] 25.16 40.46 9.6· 1018 1.5· 1020 MoE [26] 26.03 40.56 2.0· 1019 1.2· 1020 Deep-Att + PosUnk Ensemble [32] 40.4 8.0· 1020 GNMT + RL Ensemble [31] 26.30 41.16 1.8· 1020 1.1· 1021 ConvS2S Ensemble [8] 26.36 41.29 7.7· 1019 1.2· 1021 TransfteNet [15] 23.75 Deep-Att + PosUnk [32] 39.2 1.0· 1020 GNMT + RL [31] 24.6 39.92 2.3· 1019 1.4· 1020 ConvS2S [8] 25.16 40.46 9.6· 1018 1.5· 1020 MoE [26] 26.03 40.56 2.0· 1019 1.2· 1020 Deep-Att + PosUnk Ensemble [32] 40.4 8.0· 1020 GNMT + RL Ensemble [31] 26.30 41.16 1.8· 1020 1.1· 1021 ConvS2S Ensemble [8] 26.36 41.29 7.7· 1019 1.2· 1021 Transf019 1.4· 1020 ConvS2S [8] 25.16 40.46 9.6· 1018 1.5· 1020 MoE [26] 26.03 40.56 2.0· 1019 1.2· 1020 Deep-Att + PosUnk Ensemble [32] 40.4 8.0· 1020 GNMT + RL Ensemble [31] 26.30 41.16 1.8· 1020 1.1· 1021 ConvS2S Ensemble [8] 26.36 41.29 7.7· 1019 1.2· 1021 Transf...
+0 41.16 1.8· 1020 1.1· 1021 ConvS2S Ensemble [8] 26.36 41.29 7.7· 1019 1.2· 1021 Transf...
+...
+--------------------------------------------------
+RANK 5 | CONFIDENCE: 0.3843
+CONTENT: Table 3: Variations on the Transformer architecture. Unlisted values are identical to those of the base model. All metrics are on the English-to-German translation development set, newstest2013. Listed perplexities are per-wordpiece, according to our byte-pair encoding, and should not be compared to per-word perplexities. N d model dff h d k dv Pdrop ϵls train PPL BLEU params steps (dev) (dev) ×106 base 6 512 2048 8 64 64 0.1 0.1 100K 4.92 25.8 65 (A) 1 512 512 5.29 24.9 4 128 128 5.00 25.5 16 32 32 4.91 25.8 32 16 16 5.01 25.4 (B) 16 5.16 25.1 58 32 5.01 25.4 60 (C) 2 6.11 23.7 36 4 5.19 25.3...
+--------------------------------------------------
